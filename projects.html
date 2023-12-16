@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>久黒悠のポートフォリオ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/84fcae9cc5.js" crossorigin="anonymous"></script>
+  <!-- 折れ線グラフ -->
+  <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+  <script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
+</head>
+
+<body class="w-screen text-gray-800" style="padding: 35px; font-family: 'M PLUS Rounded 1c', sans-serif">
+  <div class="flex">
+    <nav class="w-1/4 h-screen fixed flex flex-col items-center">
+      <a href="index.html#" style="flex: 1; flex-basis: 0"><img id="logo" src="images/Rectangle 23.png" alt="logo"
+          class="max-w-full h-auto" /></a>
+      <ul class="text-3xl font-semibold text-center flex flex-col justify-evenly mb-10" style="flex: 2; flex-basis: 0">
+        <li class="mb-12">
+          <a href="self_introduction.html"><i class="fa-regular fa-face-smile"></i> 自己紹介</a>
+        </li>
+        <li class="mb-12">
+          <a href="skills.html"><i class="fa-regular fa-keyboard"></i> スキル</a>
+        </li>
+        <li class="mb-12">
+          <a href="projects.html"><i class="fa-regular fa-folder-open"></i> 成果物</a>
+        </li>
+        <li>
+          <a href="contact.html"><i class="fa-solid fa-phone"></i> お問い合わせ</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="w-3/4 h-screen" style="margin-left: 25vw">
+      <h1 class="text-3xl font-semibold mb-10">成果物</h1>
+      <h2 class="text-xl font-semibold mb-1" style="border-bottom: 1px solid">
+        1.
+        ITパスポート試験に出題される用語に関して、LINEで応答するチャットボット
+      </h2>
+      <p class="text-right">制作時間：100時間</p>
+      <div class="flex">
+        <img src="images/line.jpg" alt="line image" class="w-1/3 mr-5 h-auto my-auto" />
+        <div class="flex flex-col justify-around">
+          <p class="mb-2">Github(GAS)<br>
+            <a href="https://github.com/haru546/gas-itpassport/blob/main/itpassport.gs" target="_blank"
+              class="underline hover:text-red-400">https://github.com/haru546/gas-itpassport/blob/main/itpassport.gs</a>
+          </p>
+          <p class="mb-2">Google spreadsheet<br>
+            <a href="https://docs.google.com/spreadsheets/d/1bw0auUTUnH-6wN41p_ZvXZm8Z0HY4o8jRtHZN34Bjf8/edit?usp=sharing"
+              target="_blank"
+              class="underline hover:text-red-400">https://docs.google.com/spreadsheets/d/1bw0auUTUnH-6wN41p_ZvXZm8Z0HY4o8jRtHZN34Bjf8/edit?usp=sharing</a>
+          </p>
+          <p>LINE登録はこちら<br>
+            <span class="text-sm">
+              ※お友達登録後ITパスポート試験に関連する単語を送信すると、単語説明の返答があります。
+            </span><br>
+            <a href="https://lin.ee/5TCr3tF"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"
+                alt="友だち追加" height="36" class="h-10 my-5 mx-auto" /></a>
+          </p>
+        </div>
+      </div>
+
+      <p class="mt-3 mb-1">作成した理由</p>
+      <p class="mb-5 hidden">
+        HTML、CSS、Javascriptを使用し、何か作成してみたかった。
+        Chatgptに命令するだけで、自分自身でほとんどコードを考えなくても成果物が出来るか試したかった。
+        ITパスポート試験の過去問でよく使用するサイトはあったが、用語集に関してはピンとくるサイトがなかった。
+        自分だけでなく、クラスメイトもITパスポートの用語に対して苦手意識のある人が多かった為作成する価値があると思った。
+      </p>
+      <p class="mt-3 mb-1">苦労した点</p>
+      <p class="mb-5 hidden">
+        LINE MessagingAPIとGASとGoogle spreadsheetを連携させたチャットボットの例が少なく、参考にできるものがあまりなかったのが大変だった。
+        その中でも何時間調べても自分自身では解決策を見つけられず、GASプラグラム経験者のクラスメイトに助けてもらいネット上で解決策を見つけたのがユーザーからの返信後のエラーへの対処法だった。
+        ユーザーから返信が返ってきて機能するコードでは通常のGASのコンソールログにはエラーが表示されず、どのコードの修正が必要なのか分からなかった。
+        しかしクラスメイトが似たような現象のサイト情報を見つけてくれ、GCPのログエクスプローラでログを確認しコード修正をすることで完成に至った。
+      </p>
+      <p class="mt-3 mb-1">学んだ点</p>
+      <p class="hidden">
+        chatgptへの質問の仕方、活用方法に関して学ぶことができた。今では様々なことをchatgptに質問するほどに、自分には欠かせないツールとなった。
+        完成したチャットボットを使用してみると調べたい単語のほとんどが登録されておらず、膨大な量のデータを必要とするものに挑戦していたことに気づいた。
+        また返答が想定より遅く、使い勝手の悪いものが出来上がってしまった。
+        達成したい目標と想定する成果物が乖離していないか、もっと想像してから作成すべきだった。
+        目的達成のためのツール選択の重要性を感じた。
+      </p>
+
+      <h2 class="text-xl font-semibold mb-1 mt-10" style="border-bottom: 1px solid">
+        2. 架空の学校のウェブサイト
+      </h2>
+      <p class="text-right">制作時間：50時間</p>
+      <img src="images/school-site.jpg" alt="school site image" class="w-full px-10 my-5">
+      <p>URL:
+        <a href="https://lbs-itengineering.net" target="_blank" class="mt-3 underline hover:text-red-400">https://lbs-itengineering.net</a>
+      </p>
+      <p>Github:
+        <a href="https://github.com/haru546/school-site" target="_blank"
+          class="mt-3 underline hover:text-red-400">https://github.com/haru546/school-site</a>
+      </p>
+      <p class="mt-3 mb-1">作成した理由</p>
+      <p class="mb-5 js-textTrim">
+        自分の今のスキル（HTML、CSS、Javascript）で、Webサイトを作ってみたかった。
+        クラスメイトに実際にクライアント役をやってもらい、より実務に近い形でサイト制作を行いフロントエンド側で今の自分に足りないところ、自分の強みを見極めたかった。
+      </p>
+      <p class="mt-3 mb-1">苦労した点</p>
+      <p class="mb-5">
+        クライアント役の要望がポップなデザインを希望しており、要望通りのデザインを考案することが難しかった。
+        調べて提案したり、クライアント役へヒアリングを重ね、要望と相違のないポップなデザインを完成させた。
+        デザインは自分で見切りをつけないと終わりがない為、自分で期限の設定を行い遵守した。
+      </p>
+      <p class="mt-3 mb-1">学んだ点</p>
+      <p>
+        デザイン作成ツールfigmaの使用方法、どのようにすればWebサイトが作成されるのか一連の流れを理解した。
+        デザインは全く授業では学ばなかったので、デザイナーさんの大変さが少しだが分かった。
+        今回のデザインで、世の中の全てのデザイナーさんを尊敬しています・・。
+        レスポンシブデザインを考えるうえで、widthの重要性や作りやすいレイアウトに関しても考えた。
+      </p>
+      <h2 class="text-xl font-semibold mb-1 mt-10" style="border-bottom: 1px solid">
+        3. Webメモアプリ
+      </h2>
+      <p class="text-right">制作時間：200時間</p>
+      <img src="images/memo application.jpg" alt="school site image" class="w-full px-10 my-5">
+      <p>URL:
+        <a href="https://memo-application.net" target="_blank" class="mt-3 underline hover:text-red-400">https://memo-application.net</a>
+      </p>
+      <p>Github:
+        <a href="https://github.com/Miyajima0828/testproject" target="_blank"
+          class="mt-3 underline hover:text-red-400">https://github.com/Miyajima0828/testproject</a>
+      </p>
+      <p class="text-sm">※共同開発のため、共同開発者のリポジトリをクローンしています。</p>
+      <p class="mt-3 mb-1">作成した理由</p>
+      <p class="mb-5">
+        Githubを使用して、共同開発をしてみたかった。
+        授業で習ったPHPより、現場では需要のあるLaravelを使用してみたかった。
+        ITを学ぶようになって、この前調べたサイト何だったっけ・・・と思ったり、この間調べた用語どんな意味だったっけなどメモアプリを使いたいと思う場面が増えた。
+        様々なメモアプリが存在するが自分にピッタリと思うアプリがなく、シングルページで完結するメモアプリを作りたいと思った。
+      </p>
+      <p class="mt-3 mb-1">苦労した点</p>
+      <p class="mb-5">
+        Github、Laravel、livewireなど初めて扱うツールが多くて、分からないことだらけだったため自分達の定めた期限までに完成させることが難しかった。
+        またカテゴリー名の追加、変更、削除の部分は最初Modalの存在を知らず、別の作り方をしていて時間を大幅に費やしてしまった。
+        結果的にはModalを使用したことで元々作成していたものより使いやすいものになったが、知識があったり確認をしていれば時間短縮につながったと思う。
+      </p>
+      <p class="mt-3 mb-1">学んだ点</p>
+      <p>
+        共同開発の楽しさを知った。
+        元々自分がこういうものを作りたいと言い出したが、共同開発者が自分とは異なる考えや意見を出してくれたので、自分1人で作るより何倍もいいものができた。
+        Github、Laravel、livewireの使い方はまだまだ初心者だが、どういったツールなのか少しは理解ができたように思う。
+        Laravelやlivewireは知れば知るほど簡単に短い時間で開発が進むように感じたので、今後も使用して理解を深めていきたいと感じた。
+      </p>
+      <h2 class="text-xl font-semibold mb-1 mt-10" style="border-bottom: 1px solid">
+        4. ポートフォリオサイト
+      </h2>
+      <p class="text-right">制作時間：60時間</p>
+      <img src="images/school-site.jpg" alt="school site image" class="w-full px-10 my-5">
+      <p>URL:
+        <a href="https://harukahisakuro.com" target="_blank" class="mt-3 underline hover:text-red-400">https://harukahisakuro.com</a>
+      </p>
+      <p>Github:
+        <a href="https://github.com/haru546/school-site（仮）" target="_blank"
+          class="mt-3 underline hover:text-red-400">https://github.com/haru546/school-site（仮）</a>
+      </p>
+      <p class="mt-3 mb-1">作成した理由</p>
+      <p class="mb-5">
+        就職活動をするうえで、自分のことを表現する分かりやすいサイトを開設したかった。
+        架空の学校のWebサイト作成した時に、時間の関係で挑戦できなかったサイドナビゲーション、お問い合わせフォームの開設などに挑戦してみたかった。
+        メモアプリの作成で触れることができたtailwind cssが便利そうだったので、tailwind cssも使用してみたかった。
+      </p>
+      <p class="mt-3 mb-1">苦労した点</p>
+      <p class="mb-5">
+        メモアプリと同時進行で取り組んでおり、時間をあまりかけられなかった。
+        本来はトップページのアニメーションはもうひと手間かけたものを作りたかったが、有限な時間の中では難しかったので伝えたいことは伝えられる少し簡素化したグラフを最終的に選択した。
+        それでもトップページのアニメーションに一番苦戦したが、chatgptを活用し参考サイトのコードを読み解きアレンジを加え完成させた。
+      </p>
+      <p class="mt-3 mb-1">学んだ点</p>
+      <p>
+        初めてことに取り組むときは、いきなりchatgptに質問するよりも、サイトや動画を見て参考となるコードを読み解いてから取り組んだほうが、私の場合は短い時間で完成できると感じた。
+        chatgptが便利で使いやすいが、今後は何でもすぐに頼るような付き合い方は見直していきたい。
+        また今回はcreate.jsを使用したが、グラフのアニメーションは他にも様々なツールがあることを調べる中で知った。
+        挑戦すればするほど自分の知らないことが増えていくので、今後も色んなことに取り組んで知識の幅を広げ、将来は頼れるフルスタックエンジニアになりたい。
+      </p>
+    </main>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
