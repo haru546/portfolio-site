@@ -146,7 +146,8 @@ function drawGraph(stage) {
 
   let waitTime = 0;
 
-  if (waitTime <= 1800) {
+  function animateInitialPoints(){
+    if (waitTime <= 1800 ) {
     // データ点
     for (let key in config.data.datasets) {
       for (let i = 0; i < horizontalLength; i++) {
@@ -187,17 +188,23 @@ function drawGraph(stage) {
           .to({ scaleX: 0, scaleY: 0 }, 0)
           .wait(500 + waitTime)
           .to({ scaleX: 1.0, scaleY: 1.0 }, 100);
-
+        }
         prevX = baseX + horizontalStep * i;
         prevY =
           baseY - (config.data.datasets[key].data[i] * verticalStep) / 100;
-
+    
         waitTime += 300;
-      }
+
       prevX = baseX;
       prevY = baseY;
+
+      return waitTime;
     }
-  } else {
+  }
+}
+
+function animateAdditionalPoints() {
+
     // データ点と線のアニメーション
     for (let key in config.data.datasets) {
       for (let i = 0; i < horizontalLength; i++) {
@@ -261,6 +268,14 @@ function drawGraph(stage) {
         waitTime += 300;
       }
     }
+  }
+
+  animateInitialPoints();
+
+  let totalInitialAnimationTime = animateInitialPoints();
+
+  setTimeout(animateAdditionalPoints, totalInitialAnimationTime + 4000);
+}
 
     //       let additionalData = {
     //         labels: ["", "", ""],
@@ -306,8 +321,7 @@ function drawGraph(stage) {
     // drawPointsAndLines(additionalData.datasets[0], 3000);
 
     // drawPointsAndLines(additionalData.datasets[0], 6000);
-  }
-}
+
 
 //   let githubIndex = config.data.labels.indexOf("Github");
 // let emptyIndex = config.data.labels.indexOf("");
