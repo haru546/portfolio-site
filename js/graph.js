@@ -147,10 +147,10 @@ function drawGraph(stage) {
   let waitTime = 0;
 
   function animateInitialPoints(){
-    if (waitTime <= 1800 ) {
+
     // データ点
     for (let key in config.data.datasets) {
-      for (let i = 0; i < horizontalLength; i++) {
+      for (let i = 0; i < horizontalLength -3; i++) {
         if (config.data.datasets[key].data[i] == null) {
           continue;
         }
@@ -188,22 +188,27 @@ function drawGraph(stage) {
           .to({ scaleX: 0, scaleY: 0 }, 0)
           .wait(500 + waitTime)
           .to({ scaleX: 1.0, scaleY: 1.0 }, 100);
-        }
+       
         prevX = baseX + horizontalStep * i;
         prevY =
           baseY - (config.data.datasets[key].data[i] * verticalStep) / 100;
-    
+        
         waitTime += 300;
-
+      }
       prevX = baseX;
       prevY = baseY;
 
-      return waitTime;
+      // return waitTime;
     }
-  }
 }
 
-function animateAdditionalPoints() {
+  animateInitialPoints();
+
+  // let totalInitialAnimationTime = animateInitialPoints();
+
+  setTimeout(animateAdditionalPoints, 1000);
+
+  function animateAdditionalPoints() {
 
     // データ点と線のアニメーション
     for (let key in config.data.datasets) {
@@ -211,20 +216,22 @@ function animateAdditionalPoints() {
         // ... [existing code to draw initial points and lines] ...
         // Add your existing code here to draw the initial points and lines
         // up to the "Github" point
-      }
-
+        if (config.data.datasets[key].data[i] == null) {
+          continue;
+        }
+  
       let textTransitionDelay = 4000;
-
+  
       // After the last label "Github", you want to animate additional points
       let extraPoints = [150, 250, 500]; // Extra points after "Github"
       for (let i = 0; i < extraPoints.length; i++) {
         let pointValue = extraPoints[i];
         let pointIndex = horizontalLength - 3 + i; // Starting index after "Github"
-
+  
         // Calculate the position for the additional points
         let dotX = baseX + horizontalStep * pointIndex;
         let dotY = baseY - (pointValue * verticalStep) / 100;
-
+  
         // Create and animate the dot for the additional point
         let dot = new createjs.Shape();
         dot.graphics.beginFill(config.data.datasets[key].backgroundColor);
@@ -232,14 +239,14 @@ function animateAdditionalPoints() {
         dot.x = dotX;
         dot.y = dotY;
         stage.addChild(dot);
-
+  
         // Animate the dot's appearance with a delay based on waitTime
         createjs.Tween.get(dot)
           .to({ scale: 0 }, 0)
           .wait(waitTime + textTransitionDelay)
           .to({ scale: 2.0 }, 200)
           .to({ scale: 1.0 }, 200, createjs.Ease.cubicOut);
-
+  
         // Create and animate the line from the previous point to this new pointF
         let stroke = new createjs.Shape();
         stroke.graphics.beginStroke(config.data.datasets[key].borderColor);
@@ -247,118 +254,96 @@ function animateAdditionalPoints() {
         stroke.graphics.moveTo(prevX - baseX, prevY - baseY);
         // Draw the line to the new point's position relative to the baseX and baseY
         stroke.graphics.lineTo(dotX - baseX, dotY - baseY);
-        stroke.endStroke();
-
+  
         // Set the position of the stroke to the base, as we have adjusted the moveTo and lineTo relative to the base
         stroke.x = baseX;
         stroke.y = baseY;
         stage.addChildAt(stroke, 0);
-
+  
         // Animate the line's appearance with a delay based on waitTime
         createjs.Tween.get(stroke)
           .to({ scaleX: 0, scaleY: 0 }, 0)
           .wait(waitTime + textTransitionDelay)
           .to({ scaleX: 1.0, scaleY: 1.0 }, 100);
-
+  
         // Update the previous point's coordinates
         prevX = dotX;
         prevY = dotY;
-
+  
         // Increase waitTime for the next point's animation
         waitTime += 300;
       }
     }
   }
-
-  animateInitialPoints();
-
-  let totalInitialAnimationTime = animateInitialPoints();
-
-  setTimeout(animateAdditionalPoints, totalInitialAnimationTime + 4000);
+  }
 }
 
-    //       let additionalData = {
-    //         labels: ["", "", ""],
-    //         datasets: [
-    //           {
-    //             data: [150, 250, 500],
-    //           },
-    //         ],
-    //       };
+// function animateAdditionalPoints() {
 
-    //       function drawPointsAndLines(dataset, waitTime) {
+//   // データ点と線のアニメーション
+//   for (let key in config.data.datasets) {
+//     for (let i = 0; i < horizontalLength; i++) {
+//       // ... [existing code to draw initial points and lines] ...
+//       // Add your existing code here to draw the initial points and lines
+//       // up to the "Github" point
+//       if (config.data.datasets[key].data[i] == null) {
+//         continue;
+//       }
 
-    //     createjs.Tween.get(null)
-    //     .wait(waitTime)
-    //     .call(() => {
+//     let textTransitionDelay = 4000;
 
-    //       for (let i = 0; i < dataset.data.length; i++) {
-    //         let dot = new createjs.Shape();
-    //         dot.graphics.beginFill("DarkRed").drawCircle(0, 0, 5);
-    //         dot.x = baseX + horizontalStep * i;
-    //         dot.y = baseY - (dataset.data[i] * verticalStep) / 100;
-    //         stage.addChild(dot);
+//     // After the last label "Github", you want to animate additional points
+//     let extraPoints = [150, 250, 500]; // Extra points after "Github"
+//     for (let i = 0; i < extraPoints.length; i++) {
+//       let pointValue = extraPoints[i];
+//       let pointIndex = horizontalLength - 3 + i; // Starting index after "Github"
 
-    //         createjs.Tween.get(dot)
-    //         .to({ scale: 2.0 }, 200)
-    //         .to({ scale: 1.0 }, 200, createjs.Ease.cubicOut);
+//       // Calculate the position for the additional points
+//       let dotX = baseX + horizontalStep * pointIndex;
+//       let dotY = baseY - (pointValue * verticalStep) / 100;
 
-    //         if (i > 0) {
-    //           let line = new createjs.Shape();
-    //           line.graphics
-    //             .beginStroke("chocolate")
-    //             .moveTo(baseX + horizontalStep * (i - 1), baseY - (dataset.data[i - 1] * verticalStep) / 100)
-    //             .lineTo(dot.x, dot.y)
-    //             .endStroke();
-    //           stage.addChildAt(line, 0);
-    //         }
-    //       }
-    //     });
-    // }
+//       // Create and animate the dot for the additional point
+//       let dot = new createjs.Shape();
+//       dot.graphics.beginFill(config.data.datasets[key].backgroundColor);
+//       dot.graphics.drawCircle(0, 0, 5);
+//       dot.x = dotX;
+//       dot.y = dotY;
+//       stage.addChild(dot);
 
-    // drawPointsAndLines(config.data.datasets[0], 0);
+//       // Animate the dot's appearance with a delay based on waitTime
+//       createjs.Tween.get(dot)
+//         .to({ scale: 0 }, 0)
+//         .wait(waitTime + textTransitionDelay)
+//         .to({ scale: 2.0 }, 200)
+//         .to({ scale: 1.0 }, 200, createjs.Ease.cubicOut);
 
-    // drawPointsAndLines(additionalData.datasets[0], 3000);
+//       // Create and animate the line from the previous point to this new pointF
+//       let stroke = new createjs.Shape();
+//       stroke.graphics.beginStroke(config.data.datasets[key].borderColor);
+//       // Start the line at the previous point
+//       stroke.graphics.moveTo(prevX - baseX, prevY - baseY);
+//       // Draw the line to the new point's position relative to the baseX and baseY
+//       stroke.graphics.lineTo(dotX - baseX, dotY - baseY);
+//       stroke.endStroke();
 
-    // drawPointsAndLines(additionalData.datasets[0], 6000);
+//       // Set the position of the stroke to the base, as we have adjusted the moveTo and lineTo relative to the base
+//       stroke.x = baseX;
+//       stroke.y = baseY;
+//       stage.addChildAt(stroke, 0);
 
+//       // Animate the line's appearance with a delay based on waitTime
+//       createjs.Tween.get(stroke)
+//         .to({ scaleX: 0, scaleY: 0 }, 0)
+//         .wait(waitTime + textTransitionDelay)
+//         .to({ scaleX: 1.0, scaleY: 1.0 }, 100);
 
-//   let githubIndex = config.data.labels.indexOf("Github");
-// let emptyIndex = config.data.labels.indexOf("");
+//       // Update the previous point's coordinates
+//       prevX = dotX;
+//       prevY = dotY;
 
-//       createjs.Tween.get(null)
-//       .wait(2500)
-//       .call(() => {
-
-//       let githubDot = new createjs.Shape();
-//       githubDot.graphics.beginFill("DarkRed").drawCircle(0, 0, 5);
-//       githubDot.x = baseX + horizontalStep * githubIndex;
-//       githubDot.y = baseY - (100 * verticalStep) / 100;
-//       stage.addChild(githubDot);
-
-//       let emptyDot = new createjs.Shape();
-//       emptyDot.graphics.beginFill("DarkRed").drawCircle(0, 0, 5);
-//       emptyDot.x = baseX + horizontalStep * emptyIndex;
-//       emptyDot.y = baseY - (150 * verticalStep) / 100;
-//       stage.addChild(emptyDot);
-
-//     createjs.Tween.get(emptyDot)
-//       .to({ scale: 2.0 }, 200)
-//       .to({ scale: 1.0 }, 200, createjs.Ease.cubicOut);
-// });
-
-//       // Draw the line 2 seconds after the initial pause
-//       createjs.Tween.get(null)
-//         .wait(2500)
-//         .call(() => {
-//           let line = new createjs.Shape();
-//           line.graphics
-//             .beginStroke("chocolate")
-//             .moveTo(baseX + horizontalStep * githubIndex,
-//               baseY - (100 * verticalStep) / 100)
-//             .lineTo(baseX + horizontalStep * emptyIndex,
-//               baseY - (150 * verticalStep) / 100)
-//             .endStroke();
-//           stage.addChildAt(line, 0);
-//     });
-//   });
+//       // Increase waitTime for the next point's animation
+//       waitTime += 300;
+//     }
+//   }
+// }
+// }
