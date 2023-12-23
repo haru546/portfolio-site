@@ -46,29 +46,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </ul>
         </nav>
         <main class="w-3/4 h-screen" style="margin-left: 25vw">
-            <h1 class="text-3xl font-semibold mb-10">お問い合わせフォーム - 確認画面</h1>
+            <h1 class="text-3xl font-semibold mb-10">お問い合わせ - 確認画面</h1>
             <h2 class="text-xl font-semibold mb-5" style="border-bottom: 1px solid">
                 以下の内容で送信します。よろしいですか？</h2>
-            <table>
-                <tr>
-                    <td>名前：</td>
-                    <td><?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?></td>
-                </tr>
-                <tr>
-                    <td>メールアドレス：</td>
-                    <td><?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></td>
-                </tr>
-                <tr>
-                    <td>お問い合わせ内容：</td>
-                    <td><?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?></td>
-                </tr>
-            </table>
+
+            <p>名前：<?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?></p>
+            <p>メールアドレス：<?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></p>
+            <p class="mb-5">お問い合わせ内容：<?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?></p>
+
             <form method="post" action="send.php">
                 <input type="hidden" name="name" value="<?php echo $name; ?>">
                 <input type="hidden" name="email" value="<?php echo $email; ?>">
                 <input type="hidden" name="message" value="<?php echo $message; ?>">
-                <input type="submit" value="送信">
-                <button type="button" onclick="history.back()" class="mt-10 mb-5 rounded-full bg-gray-300 hover:bg-gray-500 px-4 py-2">戻る</button>
+                <div class="flex justify-around">
+                    <input type="submit" value="送信" class="mt-10 mb-5 rounded-full bg-gray-300 hover:bg-gray-500 px-4 py-2">
+                    <button type="button" onclick="history.back()" class="mt-10 mb-5 rounded-full bg-gray-300 hover:bg-gray-500 px-4 py-2">戻る</button>
+                </div>
             </form>
         </main>
     </div>

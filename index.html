@@ -25,8 +25,8 @@
     style="padding: 35px; font-family: 'M PLUS Rounded 1c', sans-serif"
   >
     <div class="lg:flex">
-      <nav class="lg:w-1/4 lg:h-screen lg:fixed lg:flex lg:flex-col lg:items-center">
-        <a href="" onclick="doReload()" style="flex: 1; flex-basis: 0"
+      <nav class="lg:w-1/4 lg:h-screen lg:fixed flex lg:flex-col lg:items-center sm:justify-between sm:content-end sm:items-end">
+        <a href="" onclick="doReload()" style="@media (min-width: 1024px) {flex: 1; flex-basis: 0}" class="sm:w-1/5"
           ><img
             id="logo"
             src="images/logo.png"
@@ -34,21 +34,21 @@
             class="max-w-full h-auto"
         /></a>
         <ul
-          class="text-3xl font-semibold text-center flex flex-col justify-evenly mb-10"
-          style="flex: 2; flex-basis: 0"
+          class="lg:text-3xl lg:text-center sm:flex lg:flex-col lg:justify-evenly lg:mb-10 sm:text-xl sm:font-semibold sm:w-3/5"
+          style="@media (min-width: 1024px) {flex: 2; flex-basis: 0}"
         >
-          <li class="mb-12">
-            <a href="self_introduction.html" class="hover:text-yellow-500"
+          <li class="lg:mb-12">
+            <a href="self_introduction.html" class="hover:text-yellow-500 sm:mr-2"
               ><i class="fa-regular fa-face-smile"></i> 自己紹介</a
             >
           </li>
-          <li class="mb-12">
-            <a href="skills.html" class="hover:text-yellow-500"
+          <li class="lg:mb-12">
+            <a href="skills.html" class="hover:text-yellow-500 sm:mr-2"
               ><i class="fa-regular fa-keyboard"></i> スキル</a
             >
           </li>
-          <li class="mb-12">
-            <a href="projects.html" class="hover:text-yellow-500"
+          <li class="lg:mb-12">
+            <a href="projects.html" class="hover:text-yellow-500 sm:mr-2"
               ><i class="fa-regular fa-folder-open"></i> 成果物</a
             >
           </li>
@@ -62,7 +62,7 @@
       <main class="w-3/4 h-screen" style="margin-left: 25vw">
         <div class="relative">
             <p
-              class="font-serif text-2xl bg-white absolute top-14 left-40 z-10 visible_text"
+              class="font-serif text-3xl bg-white absolute top-14 left-40 z-10 visible_text"
               style="
                 opacity: 1;
                 -webkit-transition: opacity 2s ease;
@@ -70,13 +70,13 @@
               "
               >now skills</p
             ><p
-              class="font-serif text-2xl text-orange-900 bg-white absolute top-14 left-40 z-10 hidden_text"
+              class="font-serif text-3xl text-yellow-500 bg-white absolute top-14 left-40 z-10 hidden_text"
               style="
                 opacity: 0;
                 -webkit-transition: opacity 4s ease;
                 transition: opacity 4s ease;
               "
-              >feature skills</p
+              >future skills</p
             >
           <canvas id="myCanvas"></canvas>
         </div>

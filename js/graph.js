@@ -14,8 +14,8 @@ let config = {
     datasets: [
       {
         label: "dataset1",
-        backgroundColor: "#666666",
-        borderColor: "#666666",
+        backgroundColor: "#181818",
+        borderColor: "#181818",
         data: [0, 10, 25, 40, 50, 80, 100, 150, 250, 500],
       },
     ],
@@ -95,7 +95,7 @@ function drawGraph() {
   horizontalLine.x = baseX;
   horizontalLine.y = baseY;
   horizontalLine.graphics
-    .beginStroke("gray")
+    .beginStroke("#181818")
     .moveTo(0, 0)
     .lineTo(stage.canvas.width * (1 - padding * 2), 0)
     .endStroke();
@@ -106,7 +106,7 @@ function drawGraph() {
   verticalLine.x = baseX;
   verticalLine.y = baseY;
   verticalLine.graphics
-    .beginStroke("gray")
+    .beginStroke("#181818")
     .moveTo(0, 0)
     .lineTo(0, -stage.canvas.height * (1 - padding * 2))
     .endStroke();
@@ -114,7 +114,7 @@ function drawGraph() {
 
   // 横軸ラベル
   for (let i = 0; i < horizontalLength; i++) {
-    let labels = new createjs.Text(config.data.labels[i], "12px serif", "gray");
+    let labels = new createjs.Text(config.data.labels[i], "12px serif", "#181818");
     labels.x = baseX + horizontalStep * i;
     labels.y = baseY + 10;
     labels.textAlign = "center";
@@ -123,7 +123,7 @@ function drawGraph() {
 
   // 縦軸ラベル
   for (let i = 0; i < verticalLength; i++) {
-    let labels = new createjs.Text(i * 100, "12px serif", "gray");
+    let labels = new createjs.Text(i * 100, "12px serif", "#181818");
     labels.x = baseX - 10;
     labels.y = baseY - verticalStep * i;
     labels.textAlign = "right";
@@ -238,7 +238,7 @@ setTimeout(function () {
   horizontalLine.x = baseX;
   horizontalLine.y = baseY;
   horizontalLine.graphics
-    .beginStroke("gray")
+    .beginStroke("#181818")
     .moveTo(0, 0)
     .lineTo(stage.canvas.width * (1 - padding * 2), 0)
     .endStroke();
@@ -249,7 +249,7 @@ setTimeout(function () {
   verticalLine.x = baseX;
   verticalLine.y = baseY;
   verticalLine.graphics
-    .beginStroke("gray")
+    .beginStroke("#181818")
     .moveTo(0, 0)
     .lineTo(0, -stage.canvas.height * (1 - padding * 2))
     .endStroke();
@@ -257,7 +257,7 @@ setTimeout(function () {
 
   // 横軸ラベル
   for (let i = 0; i < horizontalLength; i++) {
-    let labels = new createjs.Text(config.data.labels[i], "12px serif", "gray");
+    let labels = new createjs.Text(config.data.labels[i], "12px serif", "#181818");
     labels.x = baseX + horizontalStep * i;
     labels.y = baseY + 10;
     labels.textAlign = "center";
@@ -266,7 +266,7 @@ setTimeout(function () {
 
   // 縦軸ラベル
   for (let i = 0; i < verticalLength; i++) {
-    let labels = new createjs.Text(i * 100, "12px serif", "gray");
+    let labels = new createjs.Text(i * 100, "12px serif", "#181818");
     labels.x = baseX - 10;
     labels.y = baseY - verticalStep * i;
     labels.textAlign = "right";
@@ -311,7 +311,7 @@ setTimeout(function () {
         if (6 < i) {
           // 点の描画
           let dot = new createjs.Shape();
-          dot.graphics.beginFill("DarkRed");
+          dot.graphics.beginFill("#EDB900");
           dot.graphics.drawCircle(0, 0, 5);
           dot.x = baseX + horizontalStep * i;
           dot.y =
@@ -329,7 +329,7 @@ setTimeout(function () {
           // 線の描画
           let stroke = new createjs.Shape();
           stroke.graphics
-            .beginStroke("DarkRed")
+            .beginStroke("#EDB900").setStrokeStyle(1.5)
             .moveTo(0, 0)
             .lineTo(dot.x - prevX, dot.y - prevY)
             .endStroke();

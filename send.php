@@ -3,9 +3,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
     $message = $_POST["message"];
-    $to = "your_email@example.com";
+    $to = "hisakuro@limelizard98.sakura.ne.jp";
     $subject = "お問い合わせがありました";
-    $headers = "From:your_email@example.com";
+    $headers = "From:hisakuro@limelizard98.sakura.ne.jp";
     $body = "名前: $name\nメールアドレス: $email\n\n$message";
     if (mail($to, $subject, $body, $headers)) {
         $message = "お問い合わせが送信されました。ありがとうございます！";
@@ -55,9 +55,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </ul>
         </nav>
         <main class="w-3/4 h-screen" style="margin-left: 25vw">
-            <h1 class="text-3xl font-semibold mb-10">お問い合わせフォーム - 送信完了画面</h1>
+            <h1 class="text-3xl font-semibold mb-10">お問い合わせ - 送信完了画面</h1>
             <h2 class="text-xl font-semibold mb-5" style="border-bottom: 1px solid"><?php echo $message; ?></h2>
-            <p><a href="contact.php">お問い合わせフォームに戻る</a></p>
+            <p>
+                <?php
+                if ($message === "お問い合わせが送信されました。ありがとうございます！") {
+                    echo "1週間以内に送信いただいたメールアドレスまで返信させて頂きます。";
+                }
+                ?>
+            </p>
+            <div class="text-center">
+                <p class="mt-10"><a href="contact.php" class="rounded-full bg-gray-300 hover:bg-gray-500 px-4 py-2">お問い合わせフォームに戻る</a></p>
+            </div>
         </main>
     </div>
 </body>
