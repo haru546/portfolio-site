@@ -11,6 +11,7 @@ setTimeout(function () {
 let config = {
   data: {
     labels: ["0", "HTML", "CSS", "JS", "GAS", "PHP", "Laravel", "", "", ""],
+    labels: ["0", "HTML", "CSS", "JS", "GAS", "PHP", "Laravel", "", "", ""],
     datasets: [
       {
         label: "dataset1",
@@ -53,6 +54,22 @@ function init() {
 }
 
 function updateCanvasSize() {
+let stage; // stageをグローバル変数として宣言
+
+function init() {
+  stage = new createjs.Stage("myCanvas");
+  updateCanvasSize();
+
+  drawGraph();
+
+  createjs.Ticker.framerate = 60;
+  createjs.Ticker.addEventListener("tick", handleTick);
+  function handleTick() {
+    stage.update();
+  }
+}
+
+function updateCanvasSize() {
   let vwWidth = window.innerWidth * 0.75; // ビューポートの幅の75%
   stage.canvas.width = vwWidth;
   let vhHeight = window.innerHeight * 1.0; // ビューポートの幅の100%
@@ -62,9 +79,11 @@ function updateCanvasSize() {
 // ウィンドウのリサイズ時にCanvasのサイズを更新
 window.addEventListener("resize", function () {
   updateCanvasSize();
+  updateCanvasSize();
   stage.update();
 });
 
+function drawGraph() {
 function drawGraph() {
   // パディングサイズ 10%
   let padding = 0.1;
@@ -72,6 +91,23 @@ function drawGraph() {
   // 軸の基準
   let baseX = stage.canvas.width * padding;
   let baseY = stage.canvas.height * (1.0 - padding);
+
+  // 横軸ラベルの数
+  let horizontalLength = config.data.labels.length;
+  let horizontalStep =
+    (stage.canvas.width * (1 - padding * 2)) / horizontalLength;
+
+  // 縦軸ラベルの数
+  let verticalLength = 5;
+
+  // 縦軸ラベルの間隔
+  let verticalStep = (stage.canvas.height * (1 - padding * 2)) / verticalLength;
+
+  let waitTime = 0;
+
+  // 前のデータ点座標を保持する
+  let prevX = baseX;
+  let prevY = baseY;
 
   // 横軸ラベルの数
   let horizontalLength = config.data.labels.length;
