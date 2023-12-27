@@ -7,7 +7,6 @@ setTimeout(function () {
   hiddenText.style.opacity = 1;
 }, 2500);
 
-
 // データ設定
 let config = {
   data: {
@@ -54,10 +53,21 @@ function init() {
 }
 
 function updateCanvasSize() {
-  let vwWidth = window.innerWidth * 0.75; // ビューポートの幅の75%
-  stage.canvas.width = vwWidth;
-  let vhHeight = window.innerHeight * 1.0; // ビューポートの幅の100%
-  stage.canvas.height = vhHeight;
+  let windowWidth = window.innerWidth;
+  let windowLg = 1024;
+  if (windowLg <= windowWidth) {
+    //横幅1024px以上（PC）に適用させるJavaScript
+    let vwWidth = window.innerWidth * 0.75; // ビューポートの幅の75%
+    stage.canvas.width = vwWidth;
+    let vhHeight = window.innerHeight * 1.0; // ビューポートの幅の100%
+    stage.canvas.height = vhHeight;
+  } else {
+    //横幅1024px未満（タブレット、スマホ）に適用させるJavaScript
+    let vwWidth = window.innerWidth * 1.0; // ビューポートの幅の100%
+    stage.canvas.width = vwWidth;
+    let vhHeight = window.innerHeight * 1.0 - 100; // ビューポートの幅の100%-100px
+    stage.canvas.height = vhHeight;
+  }
 }
 
 // ウィンドウのリサイズ時にCanvasのサイズを更新
@@ -116,7 +126,11 @@ function drawGraph() {
 
   // 横軸ラベル
   for (let i = 0; i < horizontalLength; i++) {
-    let labels = new createjs.Text(config.data.labels[i], "12px serif", "#181818");
+    let labels = new createjs.Text(
+      config.data.labels[i],
+      "12px serif",
+      "#181818"
+    );
     labels.x = baseX + horizontalStep * i;
     labels.y = baseY + 10;
     labels.textAlign = "center";
@@ -259,7 +273,11 @@ setTimeout(function () {
 
   // 横軸ラベル
   for (let i = 0; i < horizontalLength; i++) {
-    let labels = new createjs.Text(config.data.labels[i], "12px serif", "#181818");
+    let labels = new createjs.Text(
+      config.data.labels[i],
+      "12px serif",
+      "#181818"
+    );
     labels.x = baseX + horizontalStep * i;
     labels.y = baseY + 10;
     labels.textAlign = "center";
@@ -331,7 +349,8 @@ setTimeout(function () {
           // 線の描画
           let stroke = new createjs.Shape();
           stroke.graphics
-            .beginStroke("#EDB900").setStrokeStyle(1.5)
+            .beginStroke("#EDB900")
+            .setStrokeStyle(1.5)
             .moveTo(0, 0)
             .lineTo(dot.x - prevX, dot.y - prevY)
             .endStroke();

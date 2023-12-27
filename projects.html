@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>projects</title>
+    <title>harukahisakuro portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
     <script
       src="https://kit.fontawesome.com/84fcae9cc5.js"
       crossorigin="anonymous"
@@ -20,35 +20,34 @@
     <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
     <script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
   </head>
-
   <body
     class="w-screen text-gray-800"
-    style="padding: 35px; font-family: 'M PLUS Rounded 1c', sans-serif"
+    style="font-family: 'M PLUS Rounded 1c', sans-serif"
   >
-    <div class="flex">
-      <nav class="w-1/4 h-screen fixed flex flex-col items-center">
-        <a href="index.html#" style="flex: 1; flex-basis: 0"
-          ><img
+    <div class="lg:flex">
+      <nav
+        class="lg:w-1/4 lg:h-screen lg:fixed flex lg:flex-col lg:items-center w-full h-20"
+      >
+        <a href="index.html#">
+          <img
             id="logo"
             src="images/logo.png"
             alt="logo"
-            class="max-w-full h-auto"
+            class="lg:max-w-full lg:h-auto h-20 w-auto"
         /></a>
         <ul
-          class="text-3xl font-semibold text-center flex flex-col justify-evenly mb-10"
-          style="flex: 2; flex-basis: 0"
-        >
-          <li class="mb-12">
+          class="lg:text-3xl font-semibold lg:text-center flex lg:flex-col lg:justify-evenly lg:mb-10">
+          <li class="lg:mb-12">
             <a href="self_introduction.html" class="hover:text-yellow-500"
               ><i class="fa-regular fa-face-smile"></i> 自己紹介</a
             >
           </li>
-          <li class="mb-12">
+          <li class="lg:mb-12">
             <a href="skills.html" class="hover:text-yellow-500"
               ><i class="fa-regular fa-keyboard"></i> スキル</a
             >
           </li>
-          <li class="mb-12">
+          <li class="lg:mb-12">
             <a href="projects.html" class="hover:text-yellow-500"
               ><i class="fa-regular fa-folder-open"></i> 成果物</a
             >
@@ -60,29 +59,29 @@
           </li>
         </ul>
       </nav>
-      <main class="w-3/4 h-screen" style="margin-left: 25vw">
-        <h1 class="text-3xl font-semibold mb-10">成果物</h1>
-        <h2 class="text-xl font-semibold mb-1" style="border-bottom: 1px solid">
+      <main class="lg:w-3/4 h-screen w-full">
+        <h1 class="lg:text-4xl font-semibold lg:mb-10 text-2xl mb-4">成果物</h1>
+        <h2 class="lg:text-2xl font-semibold mb-1 text-xl" style="border-bottom: 1px solid">
           1.
           ITパスポート試験に出題される用語に関して、LINEで応答するチャットボット
         </h2>
         <div class="flex justify-between">
           <div class="flex items-center">
             <p
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex items-center justify-center"
               style="border-radius: 50%"
             >
               GAS
             </p>
             <div
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex flex-col items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex flex-col items-center justify-center"
               style="border-radius: 50%"
             >
               <p>Google</p>
               <p>Sheets</p>
             </div>
             <p
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex items-center justify-center"
               style="border-radius: 50%"
             >
               LINE
@@ -97,7 +96,7 @@
             class="w-1/3 mr-5 h-auto my-auto border border-gray-400"
           />
           <div class="flex flex-col justify-around">
-            <p class="mb-2">
+            <p class="mb-2 lg:text-lg text-base">
               Github<br />
               <a
                 href="https://github.com/haru546/gas-itpassport/blob/main/itpassport.gs"
@@ -106,7 +105,7 @@
                 >https://github.com/haru546/gas-itpassport/blob/main/itpassport.gs</a
               >
             </p>
-            <p class="mb-2">
+            <p class="mb-2 lg:text-lg text-base">
               Google Sheets<br />
               <a
                 href="https://docs.google.com/spreadsheets/d/1bw0auUTUnH-6wN41p_ZvXZm8Z0HY4o8jRtHZN34Bjf8/edit?usp=sharing"
@@ -115,9 +114,9 @@
                 >https://docs.google.com/spreadsheets/d/1bw0auUTUnH-6wN41p_ZvXZm8Z0HY4o8jRtHZN34Bjf8/edit?usp=sharing</a
               >
             </p>
-            <p>
+            <p class="lg:text-lg text-base">
               LINE登録はこちら<br />
-              <span class="text-sm">
+              <span class="lg:text-base text-sm">
                 ※お友達登録後ITパスポート試験に関連する単語を送信すると、単語説明の返答があります。 </span
               ><br />
               <a href="https://lin.ee/5TCr3tF" target="_blank"
@@ -131,14 +130,14 @@
           </div>
         </div>
 
-        <p class="mt-3 mb-1 bg-yellow-100 w-28 text-center">作成した理由</p>
+        <p class="mt-3 mb-1 bg-yellow-100 w-28 text-center lg:text-lg text-base">作成した理由</p>
         <p class="mb-5">
           HTML、CSS、Javascriptを使用し、何か作成してみたかった。
           Chatgptに命令するだけで、自分自身でほとんどコードを考えなくても成果物が出来るか試したかった。
           ITパスポート試験の過去問でよく使用するサイトはあったが、用語集に関してはピンとくるサイトがなかった。
           自分だけでなく、クラスメイトもITパスポートの用語に対して苦手意識のある人が多かった為作成する価値があると思った。
         </p>
-        <p class="mt-3 mb-1 bg-sky-100 w-24 text-center">苦労した点</p>
+        <p class="mt-3 mb-1 bg-sky-100 w-24 text-center lg:text-lg text-base">苦労した点</p>
         <p class="mb-5">
           LINEとGASとGoogle
           Sheetsを連携させたチャットボットの例が少なく、参考にできるものがあまりなかった。
@@ -146,8 +145,8 @@
           通常のGASのコンソールログにはエラーが表示されず、何時間調べても自分自身では解決策を見つけられなかった。
           GASプログラム経験者のクラスメイトに助けてもらい、ネット上で解決策を見つけ完成に至った。
         </p>
-        <p class="mt-3 mb-1 bg-pink-100 w-20 text-center">学んだ点</p>
-        <p>
+        <p class="mt-3 mb-1 bg-pink-100 w-20 text-center lg:text-lg text-base">学んだ点</p>
+        <p class="">
           chatgptへの質問の仕方、活用方法に関して学ぶことができた。今では様々なことをchatgptに質問するほどに、自分には欠かせないツールとなった。
           また完成したチャットボットを使用してみると登録単語数が600語程度では、調べたい単語のほとんどが登録されていない結果となった。
           更に返答が想定より遅く、使い勝手の悪いものが出来上がってしまった。
@@ -155,7 +154,7 @@
         </p>
 
         <h2
-          class="text-xl font-semibold mb-1 mt-10"
+          class="lg:text-2xl font-semibold mb-1 text-xl mt-10"
           style="border-bottom: 1px solid"
         >
           2. 架空の学校のウェブサイト
@@ -163,25 +162,25 @@
         <div class="flex justify-between">
           <div class="flex items-center">
             <p
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex items-center justify-center"
               style="border-radius: 50%"
             >
               HTML
             </p>
             <p
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex items-center justify-center"
               style="border-radius: 50%"
             >
               CSS
             </p>
             <p
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex items-center justify-center"
               style="border-radius: 50%"
             >
               JS
             </p>
             <p
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex items-center justify-center"
               style="border-radius: 50%"
             >
               Figma
@@ -194,7 +193,7 @@
           alt="school site image"
           class="w-full mb-5 border border-gray-400"
         />
-        <p>
+        <p class="lg:text-lg text-base">
           URL:
           <a
             href="https://lbs-itengineering.net"
@@ -203,7 +202,7 @@
             >https://lbs-itengineering.net</a
           >
         </p>
-        <p>
+        <p class="lg:text-lg text-base">
           Github:
           <a
             href="https://github.com/haru546/school-site"
@@ -212,18 +211,18 @@
             >https://github.com/haru546/school-site</a
           >
         </p>
-        <p class="mt-3 mb-1 bg-yellow-100 w-28 text-center">作成した理由</p>
+        <p class="mt-3 mb-1 bg-yellow-100 w-28 text-center lg:text-lg text-base">作成した理由</p>
         <p class="mb-5">
           自分の今のスキル（HTML、CSS、Javascript）で、Webサイトを作ってみたかった。
           クラスメイトに実際にクライアント役をやってもらい、より実務に近い形でサイト制作を行いフロントエンド側で今の自分に足りないところ、自分の強みを見極めたかった。
         </p>
-        <p class="mt-3 mb-1 bg-sky-100 w-24 text-center">苦労した点</p>
+        <p class="mt-3 mb-1 bg-sky-100 w-24 text-center lg:text-lg text-base">苦労した点</p>
         <p class="mb-5">
           クライアント役の要望がポップなデザインを希望しており、要望通りのデザインを考案することが難しかった。
           調べて提案したり、クライアント役へヒアリングを重ね、要望と相違のないポップなデザインを完成させた。
           デザインは自分で見切りをつけないと終わりがない為、自分で期限の設定を行い遵守した。
         </p>
-        <p class="mt-3 mb-1 bg-pink-100 w-20 text-center">学んだ点</p>
+        <p class="mt-3 mb-1 bg-pink-100 w-20 text-center lg:text-lg text-base">学んだ点</p>
         <p>
           デザイン作成ツールFigmaの使用方法、どのようにすればWebサイトが作成されるのか一連の流れを理解した。
           デザインは全く授業では学ばなかったので、デザイナーさんの大変さが少しだが分かった。
@@ -231,7 +230,7 @@
           レスポンシブデザインを考えるうえで、widthの重要性や作りやすいレイアウトに関しても考えた。
         </p>
         <h2
-          class="text-xl font-semibold mb-1 mt-10"
+          class="lg:text-2xl font-semibold mb-1 text-xl mt-10"
           style="border-bottom: 1px solid"
         >
           3. Webメモアプリ
@@ -239,25 +238,25 @@
         <div class="flex justify-between">
           <div class="flex items-center">
             <p
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex items-center justify-center"
               style="border-radius: 50%"
             >
               Laravel
             </p>
             <p
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex items-center justify-center"
               style="border-radius: 50%"
             >
               livewire
             </p>
             <p
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex items-center justify-center"
               style="border-radius: 50%"
             >
               Github
             </p>
             <p
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex items-center justify-center"
               style="border-radius: 50%"
             >
               Figma
@@ -270,7 +269,7 @@
           alt="memo application image"
           class="w-full mb-5 border border-gray-400"
         />
-        <p>
+        <p class="lg:text-lg text-base">
           URL:
           <a
             href="https://my-memo-app.net"
@@ -279,7 +278,7 @@
             >https://my-memo-app.net</a
           >
         </p>
-        <p>
+        <p class="lg:text-lg text-base">
           Github:
           <a
             href="https://github.com/Miyajima0828/memo-application"
@@ -288,23 +287,23 @@
             >https://github.com/Miyajima0828/memo-application</a
           >
         </p>
-        <p class="text-sm">
+        <p class="lg:text-base text-sm">
           ※共同開発のため、共同開発者のリポジトリをクローンしています。
         </p>
-        <p class="mt-3 mb-1 bg-yellow-100 w-28 text-center">作成した理由</p>
+        <p class="mt-3 mb-1 bg-yellow-100 w-28 text-center lg:text-lg text-base">作成した理由</p>
         <p class="mb-5">
           Githubを使用して、共同開発をしてみたかった。
           授業で習ったPHPより、現場では需要のあるLaravelを使用してみたかった。
           ITを学ぶようになって、この前調べたサイト何だったっけ・・・と思ったり、この間調べた用語どんな意味だったっけなどメモアプリを使いたいと思う場面が増えた。
           様々なメモアプリが存在するが自分にピッタリと思うアプリがなく、シングルページで完結するメモアプリを作りたいと思った。
         </p>
-        <p class="mt-3 mb-1 bg-sky-100 w-24 text-center">苦労した点</p>
+        <p class="mt-3 mb-1 bg-sky-100 w-24 text-center lg:text-lg text-base">苦労した点</p>
         <p class="mb-5">
           Github、Laravel、livewireなど初めて扱うツールが多くて、分からないことだらけだったため自分達の定めた期限までに完成させることが難しかった。
           またカテゴリー名の追加、変更、削除の部分は最初Modalの存在を知らず、別の作り方をしていて時間を大幅に費やしてしまった。
           結果的にはModalを使用したことで元々作成していたものより使いやすいものになったが、知識があったり確認をしていれば時間短縮につながったと思う。
         </p>
-        <p class="mt-3 mb-1 bg-pink-100 w-20 text-center">学んだ点</p>
+        <p class="mt-3 mb-1 bg-pink-100 w-20 text-center lg:text-lg text-base">学んだ点</p>
         <p>
           共同開発の楽しさを知った。
           元々自分がこういうものを作りたいと言い出したが、共同開発者が自分とは異なる考えや意見を出してくれたので、自分1人で作るより何倍もいいものができた。
@@ -312,7 +311,7 @@
           Laravelやlivewireは知れば知るほど簡単に短い時間で開発が進むように感じたので、今後も使用して理解を深めていきたいと感じた。
         </p>
         <h2
-          class="text-xl font-semibold mb-1 mt-10"
+          class="lg:text-2xl font-semibold mb-1 text-xl mt-10"
           style="border-bottom: 1px solid"
         >
           4. ポートフォリオサイト
@@ -320,38 +319,38 @@
         <div class="flex justify-between">
           <div class="flex items-center">
             <p
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex items-center justify-center"
               style="border-radius: 50%"
             >
               HTML
             </p>
             <div
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex flex-col items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex flex-col items-center justify-center"
               style="border-radius: 50%"
             >
               <p>Tailwind</p>
               <p>CSS</p>
             </div>
             <p
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex items-center justify-center"
               style="border-radius: 50%"
             >
               JS
             </p>
             <p
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex items-center justify-center"
               style="border-radius: 50%"
             >
               CreateJS
             </p>
             <p
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex items-center justify-center"
               style="border-radius: 50%"
             >
               Github
             </p>
             <p
-              class="bg-gray-300 w-20 h-20 mr-3 mt-2 mb-3 flex items-center justify-center"
+              class="bg-gray-300 w-20 h-20 lg:mr-3 sm:mr-2 mt-2 mb-3 flex items-center justify-center"
               style="border-radius: 50%"
             >
               Figma
@@ -364,7 +363,7 @@
           alt="portfolio site image"
           class="w-full mb-5 border border-gray-400"
         />
-        <p>
+        <p class="lg:text-lg text-base">
           URL:
           <a
             href="https://haruka-hisakuro.com"
@@ -373,7 +372,7 @@
             >https://haruka-hisakuro.com</a
           >
         </p>
-        <p>
+        <p class="lg:text-lg text-base">
           Github:
           <a
             href="https://github.com/haru546/portfolio-site"
@@ -382,19 +381,19 @@
             >https://github.com/haru546/portfolio-site</a
           >
         </p>
-        <p class="mt-3 mb-1 bg-yellow-100 w-28 text-center">作成した理由</p>
+        <p class="mt-3 mb-1 bg-yellow-100 w-28 text-center lg:text-lg text-base">作成した理由</p>
         <p class="mb-5">
           就職活動をするうえで、自分のことを表現する分かりやすいサイトを開設したかった。
           架空の学校のWebサイトを作成した際に、時間の関係で挑戦できなかったサイドナビゲーション、お問い合わせフォームの開設などに挑戦してみたかった。
           メモアプリの作成で触れることができたTailwind
           CSSが便利そうだったので、Tailwind CSSも使用してみたかった。
         </p>
-        <p class="mt-3 mb-1 bg-sky-100 w-24 text-center">苦労した点</p>
+        <p class="mt-3 mb-1 bg-sky-100 w-24 text-center lg:text-lg text-base">苦労した点</p>
         <p class="mb-5">
           トップページのグラフアニメーションに一番苦労した。
           メモアプリと同時進行で作業していたため初めて挑戦したCreateJSにかけられる時間も充分ではなかったが、参考サイトのコードをchatgptを活用し読み解きアレンジを加え完成させた。
         </p>
-        <p class="mt-3 mb-1 bg-pink-100 w-20 text-center">学んだ点</p>
+        <p class="mt-3 mb-1 bg-pink-100 w-20 text-center lg:text-lg text-base">学んだ点</p>
         <p>
           chatgptは便利で使いやすいが、場合によってはサイト検索などより完成までに時間を様する場合もあると感じた。
           色んな選択肢の1つのツールとして捉え、何でもまずchatgptに聞くような付き合い方は改めたい。

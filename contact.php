@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>contact</title>
+    <title>harukahisakuro portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
     <script
       src="https://kit.fontawesome.com/84fcae9cc5.js"
       crossorigin="anonymous"
@@ -22,32 +22,32 @@
   </head>
   <body
     class="w-screen text-gray-800"
-    style="padding: 35px; font-family: 'M PLUS Rounded 1c', sans-serif"
+    style="font-family: 'M PLUS Rounded 1c', sans-serif"
   >
-    <div class="flex">
-      <nav class="w-1/4 h-screen fixed flex flex-col items-center">
-        <a href="index.html#" style="flex: 1; flex-basis: 0"
-          ><img
+    <div class="lg:flex">
+      <nav
+        class="lg:w-1/4 lg:h-screen lg:fixed flex lg:flex-col lg:items-center w-full h-20"
+      >
+        <a href="index.html#">
+          <img
             id="logo"
             src="images/logo.png"
             alt="logo"
-            class="max-w-full h-auto"
+            class="lg:max-w-full lg:h-auto h-20 w-auto"
         /></a>
         <ul
-          class="text-3xl font-semibold text-center flex flex-col justify-evenly mb-10"
-          style="flex: 2; flex-basis: 0"
-        >
-          <li class="mb-12">
+          class="lg:text-3xl font-semibold lg:text-center flex lg:flex-col lg:justify-evenly lg:mb-10">
+          <li class="lg:mb-12">
             <a href="self_introduction.html" class="hover:text-yellow-500"
               ><i class="fa-regular fa-face-smile"></i> 自己紹介</a
             >
           </li>
-          <li class="mb-12">
+          <li class="lg:mb-12">
             <a href="skills.html" class="hover:text-yellow-500"
               ><i class="fa-regular fa-keyboard"></i> スキル</a
             >
           </li>
-          <li class="mb-12">
+          <li class="lg:mb-12">
             <a href="projects.html" class="hover:text-yellow-500"
               ><i class="fa-regular fa-folder-open"></i> 成果物</a
             >
@@ -59,9 +59,9 @@
           </li>
         </ul>
       </nav>
-      <main class="w-3/4 h-screen" style="margin-left: 25vw">
-        <h1 class="text-3xl font-semibold mb-10">お問い合わせ</h1>
-        <h2 class="text-xl font-semibold mb-5" style="border-bottom: 1px solid">
+      <main class="lg:w-3/4 h-screen w-full">
+        <h1 class="lg:text-4xl font-semibold mb-10 text-2xl">お問い合わせ</h1>
+        <h2 class="lg:text-2xl font-semibold mb-5 text-xl" style="border-bottom: 1px solid">
           いつでもお問合せお待ちしております。
         </h2>
         <form
@@ -70,26 +70,26 @@
           onsubmit="return validateForm()"
         >
           <label for="name">
-            <p>
+            <p class="lg:text-lg text-base">
               お名前（必須）<br />
               <input id="name" type="text" name="name" class="w-full h-8 border border-black mb-5" required />
             </p>
           </label>
           <label for="email">
-            <p>
+            <p class="lg:text-lg text-base">
               メールアドレス（必須）<br />
               <input id="email" type="email" name="email" class="w-full h-8 border border-black mb-5" required />
             </p>
           </label>
           <label for="massage">
-            <p>
+            <p class="lg:text-lg text-base">
               内容（必須）<br />
               <textarea id="message" name="message" class="w-full h-56 border border-black mb-5 text-justify:top" required></textarea>
             </p>
           </label>
           <div>
-            <p>プライバシーポリシー</p>
-            <div class="w-full h-40 border border-black overflow-auto text-sm">
+            <p class="lg:text-lg text-base">プライバシーポリシー</p>
+            <div class="w-full h-40 border border-black overflow-auto lg:text-base text-sm">
               <p>
                 私、久黒悠はお客様が安心してこのウェブサイトをご利用頂けるよう、個人情報保護に取り組んでいます。
               </p>
@@ -121,12 +121,13 @@
                 type="checkbox"
                 name="agree"
                 value="1"
+                class="lg:text-lg text-base"
               />プライバシーポリシーに同意する
             </label>
-            <p id="privacyError" class="error-message text-rose-800"></p>
+            <p id="privacyError" class="error-message text-rose-800 lg:text-lg text-base"></p>
           </div>
           <div class="text-center">
-          <input type="submit" value="送信" class="mt-10 mb-5 rounded-full bg-gray-300 hover:bg-gray-500 px-4 py-2">
+          <input type="submit" value="送信" class="mt-10 mb-5 rounded-full bg-gray-300 hover:bg-gray-500 px-4 py-2 lg:text-lg text-base">
           </div>
         </form>
       </main>
