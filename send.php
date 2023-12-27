@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </ul>
         </nav>
         <main class="lg:w-3/4 h-screen w-full">
-            <h1 class="lg:text-4xl font-semibold mb-10 text-2xl">お問い合わせ - 送信完了画面</h1>
+            <h1 class="lg:text-4xl font-semibold lg:mb-10 text-2xl mb-4">お問い合わせ - 送信完了画面</h1>
             <h2 class="lg:text-2xl font-semibold mb-5 text-xl" style="border-bottom: 1px solid"><?php echo $message; ?></h2>
             <p class="lg:text-lg text-base">
                 <?php
