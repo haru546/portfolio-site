@@ -1,47 +1,126 @@
 @media (min-width: 1024px) {
-    body {
-        padding: 35px;
-    }
-    nav a {
-        flex: 1;
-        flex-basis: 0;
-    }
-    nav ul {
-        flex: 2;
-        flex-basis: 0;
-    }
-    nav ul li {
-        margin-left: 0;
-    }
-    main {
-      margin-left: 25vw;
-    }
+  body {
+    padding: 35px;
   }
+  nav a {
+    flex: 1;
+    flex-basis: 0;
+  }
+  nav ul {
+    flex: 2;
+    flex-basis: 0;
+  }
+  nav ul li {
+    margin-left: 0;
+  }
+  main {
+    margin-left: 25vw;
+  }
+}
 
 @media (max-width: 1023px) {
-    body {
-        padding: 0 30px;
-    }
-    nav {
-        margin-bottom: 20px;
-        background-color: white;
-        position: fixed;
-        z-index: 20;
-    }
-    nav ul {
-        align-items: center;
-    }
-    main {
-        padding-top: 100px;
-    }  
+  body {
+    padding: 0 30px;
+  }
+  nav {
+    margin-bottom: 20px;
+    background-color: white;
+    position: fixed;
+    z-index: 20;
+  }
+  nav ul {
+    align-items: center;
+  }
+  main {
+    padding-top: 100px;
+  }
 }
 
 @media (max-width: 1023px) and (min-width: 640px) {
-    nav ul li {
-        margin-left: 40px;
-    }
+  nav ul li {
+    margin-left: 40px;
+  }
 }
 
-@media  (max-width: 639px) {
-    
+@media (min-width: 640px) {
+  .menu-toggle {
+    display: none;
+  }
+  .skills {
+    display: grid;
+    grid-template-columns: 90px 80px auto;
+    grid-column-gap: 40px;
+    grid-row-gap: 15px;
+  }
+}
+
+@media (max-width: 639px) {
+  .menu-toggle {
+    display: block;
+    font-size: 40px;
+    cursor: pointer;
+    color: inherit;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav ul {
+    display: none; /* 最初は非表示 */
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 639px;
+    width: 100%;
+    list-style-type: none;
+    margin-left: -30px;
+    margin-top: 200px;
+  }
+  nav ul li {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: large;
+  }
+  nav ul li a {
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: inherit;
+  }
+  .my-photo {
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+    margin: 30px auto;
+  }
+  .skills p:nth-of-type(odd) {
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  .skills img {
+    height: 1rem;
+    width: auto;
+    display: inline;
+  }
+  .line-img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .line-friends {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .use-tools {
+    flex-wrap: wrap;
+  }
+  .github-text + br {
+    display: none;
+  }
+  .googlesheets-text + br {
+    display: none;
+  }
 }

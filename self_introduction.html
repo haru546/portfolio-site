@@ -26,7 +26,7 @@
   >
     <div class="lg:flex">
       <nav
-        class="lg:w-1/4 lg:h-screen lg:fixed flex lg:flex-col lg:items-center w-full h-20"
+        class="lg:w-1/4 lg:h-screen lg:fixed sm:flex lg:flex-col lg:items-center w-full h-20"
       >
         <a href="index.html#">
           <img
@@ -35,8 +35,10 @@
             alt="logo"
             class="lg:max-w-full lg:h-auto h-20 w-auto"
         /></a>
+        <div class="menu-toggle mr-14">&#9776;</div>
         <ul
-          class="lg:text-3xl font-semibold lg:text-center flex lg:flex-col lg:justify-evenly lg:mb-10">
+          class="lg:text-3xl font-semibold lg:text-center sm:flex lg:flex-col lg:justify-evenly lg:mb-10"
+        >
           <li class="lg:mb-12">
             <a href="self_introduction.html" class="hover:text-yellow-500"
               ><i class="fa-regular fa-face-smile"></i> 自己紹介</a
@@ -61,13 +63,13 @@
       </nav>
       <main class="lg:w-3/4 h-screen w-full">
         <h1 class="lg:text-4xl font-semibold lg:mb-10 text-2xl mb-4">自己紹介</h1>
-        <div class="flex">
+        <div class="sm:flex">
           <img
             src="images/my-photo.jpg"
             alt="自分の写真"
-            class="mr-12 my-auto w-1/4"
+            class="sm:mr-12 sm:my-auto sm:w-1/4 my-photo"
           />
-          <section class="w-3/4">
+          <section class="sm:w-3/4">
             <h2
               class="lg:text-2xl font-semibold mb-4 text-xl"
               style="border-bottom: 1px solid"
@@ -79,13 +81,10 @@
               <li>生年月日：1989年10月31日</li>
               <li>故郷：熊本県合志市</li>
               <li>
-                家族構成：夫と可愛い男の子2人の4人家族<br />
-                <span style="margin-left: 5em"
-                  >子供の年齢は第1子6歳（年長）、第2子4歳（年中）</span
-                >
+                家族構成：夫と可愛い男の子2人の4人家族です。子供の年齢は第1子6歳（年長）、第2子4歳（年中）。
               </li>
-              <li>特技：何事にも前向きに頑張ることができる</li>
-              <li>仕事に対する考え方：過程は大事、結果はもっと大事</li>
+              <li>特技：何事にも前向きに頑張ることができる。</li>
+              <li>仕事に対する考え方：過程は大事、結果はもっと大事。</li>
             </ul>
           </section>
         </div>
@@ -125,5 +124,6 @@
         </ul>
       </main>
     </div>
+    <script src="js/script.js"></script>
   </body>
 </html>

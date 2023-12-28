@@ -26,7 +26,7 @@
   >
     <div class="lg:flex">
       <nav
-        class="lg:w-1/4 lg:h-screen lg:fixed flex lg:flex-col lg:items-center w-full h-20"
+        class="lg:w-1/4 lg:h-screen lg:fixed sm:flex lg:flex-col lg:items-center w-full h-20"
       >
         <a href="index.html#">
           <img
@@ -35,8 +35,10 @@
             alt="logo"
             class="lg:max-w-full lg:h-auto h-20 w-auto"
         /></a>
+        <div class="menu-toggle mr-14">&#9776;</div>
         <ul
-          class="lg:text-3xl font-semibold lg:text-center flex lg:flex-col lg:justify-evenly lg:mb-10">
+          class="lg:text-3xl font-semibold lg:text-center sm:flex lg:flex-col lg:justify-evenly lg:mb-10"
+        >
           <li class="lg:mb-12">
             <a href="self_introduction.html" class="hover:text-yellow-500"
               ><i class="fa-regular fa-face-smile"></i> 自己紹介</a
@@ -67,51 +69,44 @@
         >
           言語・フレームワーク
         </h2>
-        <p class="text-sm mb-8">
+        <p class="text-sm sm:mb-8">
           使用したことのある言語、フレームワーク、ライブラリをまとめました。<br />
           どの言語により興味を持ち、今後学んでいきたいのか☆の数で表しています。<br />
           どちらかというと今はバックエンドエンジニア志望ですが、Javascriptも面白くてフロントエンドエンジニアにも興味があります。<br />
           今後はまずは任された業務に関する言語のスキルを伸ばし、将来はフルスタックエンジニアになりたいです。
         </p>
-        <div
-          class="grid mt-3 lg:text-lg text-base"
-          style="
-            grid-template-columns: 90px 80px auto;
-            grid-column-gap: 40px;
-            grid-row-gap: 15px;
-          "
-        >
-          <p>HTML</p>
-          <img src="images/onestar.png" alt="star" class="mt-2" />
+        <div class="sm:grid sm:mt-3 lg:text-lg text-base skills">
+            <p>HTML</p>
+            <img src="images/onestar.png" alt="star" class="sm:mt-2" />
           <p>
             Helloと記述してブラウザにHelloと表示された時は、おお！と思いました(笑)
           </p>
-          <p>CSS</p>
-          <img src="images/threestars.png" alt="star" class="mt-2" />
+            <p>CSS</p>
+            <img src="images/threestars.png" alt="star" class="sm:mt-2" />
           <p>
             デザイン通りのものを完成させるには、CSSの知識は必須と感じています。
             最近Tailwind CSSに挑戦し、使いこなせるようになりたいと思いました。
           </p>
-          <p>Javascript</p>
-          <img src="images/fourstars.png" alt="star" class="mt-2" />
+            <p>Javascript</p>
+            <img src="images/fourstars.png" alt="star" class="sm:mt-2" />
           <p>
             動きを表現できることが面白いです！今後はReactなどフレームワークも学んでいきたいと考えています。
           </p>
-          <p>GAS</p>
-          <img src="images/twostars.png" alt="star" class="mt-2" />
+            <p>GAS</p>
+            <img src="images/twostars.png" alt="star" class="sm:mt-2" />
           <p>GoogleSpreadsheetなどと連携できることに魅力を感じています。</p>
-          <p>PHP</p>
-          <img src="images/fourstars.png" alt="star" class="mt-2" />
+            <p>PHP</p>
+            <img src="images/fourstars.png" alt="star" class="sm:mt-2" />
           <p>
             データベースとの連携ができて、出来ることの幅が広いと感じています。
           </p>
-          <p>Laravel</p>
-          <img src="images/fivestars.png" alt="star" class="mt-2" />
+            <p>Laravel</p>
+            <img src="images/fivestars.png" alt="star" class="sm:mt-2" />
           <p>
             PHPより、より早く簡単に希望のものが作れるイメージを持っています。livewireと組み合わせて、今後も理解を深めたい言語です！！
           </p>
-          <p>createJS</p>
-          <img src="images/twostars.png" alt="star" class="mt-2" />
+            <p>createJS</p>
+            <img src="images/twostars.png" alt="star" class="sm:mt-2" />
           <p>
             グラフのアニメーションを制作する際に、tween.jsと組み合わせて使用しました。やり方次第で、様々なアニメーションが実装できる可能性を感じました。
           </p>
@@ -139,5 +134,6 @@
         </p>
       </main>
     </div>
+    <script src="js/script.js"></script>
   </body>
 </html>

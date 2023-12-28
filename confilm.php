@@ -10,42 +10,67 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="ja">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>harukahisakuro portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="https://kit.fontawesome.com/84fcae9cc5.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/84fcae9cc5.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- 折れ線グラフ -->
     <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
     <script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
-</head>
-
-<body class="w-screen text-gray-800" style="font-family: 'M PLUS Rounded 1c', sans-serif">
+  </head>
+  <body
+    class="w-screen text-gray-800"
+    style="font-family: 'M PLUS Rounded 1c', sans-serif"
+  >
     <div class="lg:flex">
-        <nav class="lg:w-1/4 lg:h-screen lg:fixed flex lg:flex-col lg:items-center w-full h-20">
-            <a href="index.html#">
-                <img id="logo" src="images/logo.png" alt="logo" class="lg:max-w-full lg:h-auto h-20 w-auto" /></a>
-            <ul class="lg:text-3xl font-semibold lg:text-center flex lg:flex-col lg:justify-evenly lg:mb-10">
-                <li class="lg:mb-12">
-                    <a href="self_introduction.html" class="hover:text-yellow-500"><i class="fa-regular fa-face-smile"></i> 自己紹介</a>
-                </li>
-                <li class="lg:mb-12">
-                    <a href="skills.html" class="hover:text-yellow-500"><i class="fa-regular fa-keyboard"></i> スキル</a>
-                </li>
-                <li class="lg:mb-12">
-                    <a href="projects.html" class="hover:text-yellow-500"><i class="fa-regular fa-folder-open"></i> 成果物</a>
-                </li>
-                <li>
-                    <a href="contact.php" class="hover:text-yellow-500"><i class="fa-solid fa-phone"></i> お問い合わせ</a>
-                </li>
-            </ul>
-        </nav>
+      <nav
+        class="lg:w-1/4 lg:h-screen lg:fixed sm:flex lg:flex-col lg:items-center w-full h-20"
+      >
+        <a href="index.html#">
+          <img
+            id="logo"
+            src="images/logo.png"
+            alt="logo"
+            class="lg:max-w-full lg:h-auto h-20 w-auto"
+        /></a>
+        <div class="menu-toggle mr-14">&#9776;</div>
+        <ul
+          class="lg:text-3xl font-semibold lg:text-center sm:flex lg:flex-col lg:justify-evenly lg:mb-10"
+        >
+          <li class="lg:mb-12">
+            <a href="self_introduction.html" class="hover:text-yellow-500"
+              ><i class="fa-regular fa-face-smile"></i> 自己紹介</a
+            >
+          </li>
+          <li class="lg:mb-12">
+            <a href="skills.html" class="hover:text-yellow-500"
+              ><i class="fa-regular fa-keyboard"></i> スキル</a
+            >
+          </li>
+          <li class="lg:mb-12">
+            <a href="projects.html" class="hover:text-yellow-500"
+              ><i class="fa-regular fa-folder-open"></i> 成果物</a
+            >
+          </li>
+          <li>
+            <a href="contact.php" class="hover:text-yellow-500"
+              ><i class="fa-solid fa-phone"></i> お問い合わせ</a
+            >
+          </li>
+        </ul>
+      </nav>
         <main class="lg:w-3/4 h-screen w-full">
             <h1 class="lg:text-4xl font-semibold lg:mb-10 text-2xl mb-4">お問い合わせ - 確認画面</h1>
             <h2 class="lg:text-2xl font-semibold mb-5 text-xl" style="border-bottom: 1px solid">
@@ -66,6 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </main>
     </div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
