@@ -125,14 +125,23 @@ function drawGraph() {
   stage.addChild(verticalLine);
 
   // 横軸ラベル
-  for (let i = 0; i < horizontalLength; i++) {
+  let isVertical = stage.canvas.width <= 639; // 横幅に基づくラベルの方向を決定
+  for (let i = 1; i < horizontalLength; i++) {
     let labels = new createjs.Text(
       config.data.labels[i],
       "12px serif",
       "#181818"
     );
-    labels.x = baseX + horizontalStep * i;
-    labels.y = baseY + 10;
+    if (isVertical) {
+      // 横幅が639px以下の場合、ラベルを縦書きにする
+      labels.rotation = 90;
+      labels.x = baseX + horizontalStep * i; // X位置を調整
+      labels.y = baseY + 20; // Y位置を調整
+    } else {
+      // それ以外の場合、横書きのまま
+      labels.x = baseX + horizontalStep * i;
+      labels.y = baseY + 10;
+    }
     labels.textAlign = "center";
     stage.addChild(labels);
   }
@@ -272,14 +281,23 @@ setTimeout(function () {
   stage.addChild(verticalLine);
 
   // 横軸ラベル
-  for (let i = 0; i < horizontalLength; i++) {
+  let isVertical = stage.canvas.width <= 639; // 横幅に基づくラベルの方向を決定
+  for (let i = 1; i < horizontalLength; i++) {
     let labels = new createjs.Text(
       config.data.labels[i],
       "12px serif",
       "#181818"
     );
-    labels.x = baseX + horizontalStep * i;
-    labels.y = baseY + 10;
+    if (isVertical) {
+      // 横幅が639px以下の場合、ラベルを縦書きにする
+      labels.rotation = 90;
+      labels.x = baseX + horizontalStep * i; // X位置を調整
+      labels.y = baseY + 20; // Y位置を調整
+    } else {
+      // それ以外の場合、横書きのまま
+      labels.x = baseX + horizontalStep * i;
+      labels.y = baseY + 10;
+    }
     labels.textAlign = "center";
     stage.addChild(labels);
   }
