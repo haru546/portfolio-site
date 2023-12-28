@@ -113,6 +113,9 @@
     width: 100%;
     margin-bottom: 20px;
   }
+  .line {
+    margin-top: 10px;
+  }
   .line-friends {
     margin-top: 10px;
     margin-bottom: 20px;
