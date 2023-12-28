@@ -128,7 +128,7 @@
             </label>
             <p id="privacyError" class="error-message text-rose-800 lg:text-lg text-base"></p>
           </div>
-          <div class="text-center">
+          <div class="text-center last-tag">
           <input type="submit" value="送信" class="mt-10 mb-5 rounded-full bg-gray-300 hover:bg-gray-500 px-4 py-2 lg:text-lg text-base">
           </div>
         </form>
