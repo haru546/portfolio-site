@@ -19,6 +19,7 @@
     <!-- 折れ線グラフ -->
     <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
     <script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   </head>
   <body
     class="w-screen text-gray-800"
@@ -132,6 +133,7 @@
           <input type="submit" value="送信" class="mt-10 mb-5 rounded-full bg-gray-300 hover:bg-gray-500 px-4 py-2 lg:text-lg text-base">
           </div>
         </form>
+        <p class="pagetop"><a href="#wrap">▲</a></p>
       </main>
     </div>
 

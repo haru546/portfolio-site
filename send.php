@@ -38,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- 折れ線グラフ -->
     <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
     <script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   </head>
   <body
     class="w-screen text-gray-800"
@@ -93,6 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="text-center">
                 <p class="mt-10"><a href="contact.php" class="rounded-full bg-gray-300 hover:bg-gray-500 px-4 py-2 lg:text-lg text-base">お問い合わせフォームに戻る</a></p>
             </div>
+            <p class="pagetop"><a href="#wrap">▲</a></p>
         </main>
     </div>
     <script src="js/script.js"></script>

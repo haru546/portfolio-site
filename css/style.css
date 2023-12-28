@@ -1,3 +1,38 @@
+.pagetop {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 15px;
+}
+.pagetop a {
+  display: block;
+  background-color: #ccc;
+  text-align: center;
+  color: #222;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 5px 10px;
+filter:alpha(opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+.pagetop a:hover {
+  display: block;
+  background-color: #b2d1fb;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+  padding:5px 10px;
+filter:alpha(opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+
+.last-tag {
+  padding-bottom: 50px;
+}
+
 @media (min-width: 1024px) {
   body {
     padding: 35px;
@@ -33,9 +68,6 @@
   }
   main {
     padding-top: 100px;
-  }
-  .last-tag {
-    padding-bottom: 50px;
   }
 }
 
@@ -102,12 +134,18 @@
   }
   .skills p:nth-of-type(odd) {
     margin-right: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
+    float: left;
+    font-weight: 1000;
   }
   .skills img {
     height: 1rem;
     width: auto;
     display: inline;
+    margin-top: 24px;
+  }
+  .skills p:nth-of-type(even) {
+    clear: both;
   }
   .line-img {
     width: 100%;

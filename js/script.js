@@ -49,8 +49,23 @@ document.addEventListener('DOMContentLoaded', function () {
       googlesheetsText.textContent = 'Google Sheets';
     }
   }
-
   // 初期ロード時とウィンドウサイズの変更時に関数を実行
   updateText();
   window.addEventListener('resize', updateText);
+});
+
+// トップへ戻るボタン
+$(document).ready(function() {
+  let pagetop = $('.pagetop');
+    $(window).scroll(function () {
+       if ($(this).scrollTop() > 100) {
+            pagetop.fadeIn();
+       } else {
+            pagetop.fadeOut();
+            }
+       });
+       pagetop.click(function () {
+           $('body, html').animate({ scrollTop: 0 }, 500);
+              return false;
+   });
 });
