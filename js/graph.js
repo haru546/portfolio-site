@@ -22,34 +22,24 @@ let config = {
   },
 };
 
-// width: 75vw;、height:100vhにしたい場合
-window.addEventListener("load", init);
-function init() {
-  let stage = new createjs.Stage("myCanvas");
-  updateCanvasSize(stage);
-
-  drawGraph(stage);
-
-  createjs.Ticker.framerate = 60;
-  createjs.Ticker.addEventListener("tick", handleTick);
-  function handleTick() {
-    stage.update();
-  }
-}
-
 let stage; // stageをグローバル変数として宣言
 
+// ロードしたときにinit関数を呼び出し
+window.addEventListener("load", init);
 function init() {
   stage = new createjs.Stage("myCanvas");
+
+  // updateCanvasSize関数を呼び出し
   updateCanvasSize();
 
+  // drawGraph関数を呼び出し
   drawGraph();
 
+  // 1秒間に60フレームを設定
   createjs.Ticker.framerate = 60;
-  createjs.Ticker.addEventListener("tick", handleTick);
-  function handleTick() {
-    stage.update();
-  }
+
+  // 画面内容をフレーム毎に更新
+  createjs.Ticker.addEventListener("tick", stage);
 }
 
 function updateCanvasSize() {
@@ -59,13 +49,13 @@ function updateCanvasSize() {
     //横幅1024px以上（PC）に適用させるJavaScript
     let vwWidth = window.innerWidth * 0.75; // ビューポートの幅の75%
     stage.canvas.width = vwWidth;
-    let vhHeight = window.innerHeight * 1.0; // ビューポートの幅の100%
+    let vhHeight = window.innerHeight * 0.9; // ビューポートの幅の90%
     stage.canvas.height = vhHeight;
   } else {
     //横幅1024px未満（タブレット、スマホ）に適用させるJavaScript
-    let vwWidth = window.innerWidth * 1.0; // ビューポートの幅の100%
+    let vwWidth = window.innerWidth * 0.9; // ビューポートの幅の100%
     stage.canvas.width = vwWidth;
-    let vhHeight = window.innerHeight * 1.0 - 100; // ビューポートの幅の100%-100px
+    let vhHeight = window.innerHeight * 0.95 - 100; // ビューポートの幅の95%-100px
     stage.canvas.height = vhHeight;
   }
 }
@@ -76,7 +66,7 @@ window.addEventListener("resize", function () {
   stage.update();
 });
 
-// function drawGraph() {
+// now skillsの描写
 function drawGraph() {
   // パディングサイズ 10%
   let padding = 0.1;
@@ -97,10 +87,6 @@ function drawGraph() {
   let verticalStep = (stage.canvas.height * (1 - padding * 2)) / verticalLength;
 
   let waitTime = 0;
-
-  // 前のデータ点座標を保持する
-  let prevX = baseX;
-  let prevY = baseY;
 
   // 横軸の描画
   let horizontalLine = new createjs.Shape();
@@ -184,6 +170,10 @@ function drawGraph() {
     stage.addChild(additionalLine);
   }
 
+  // 前のデータ点座標を保持する
+  let prevX = baseX;
+  let prevY = baseY;
+
   // データ点
   for (let key in config.data.datasets) {
     for (let i = 0; i < horizontalLength - 3; i++) {
@@ -234,6 +224,7 @@ function drawGraph() {
   }
 }
 
+// 一時停止後の描写
 setTimeout(function () {
   let padding = 0.1;
 
