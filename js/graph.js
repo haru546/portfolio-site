@@ -22,23 +22,18 @@ let config = {
   },
 };
 
-let stage; // stageをグローバル変数として宣言
+let stage;
 
-// ロードしたときにinit関数を呼び出し
+// ページ読み込み後、init関数スタート
 window.addEventListener("load", init);
 function init() {
   stage = new createjs.Stage("myCanvas");
 
-  // updateCanvasSize関数を呼び出し
   updateCanvasSize();
-
-  // drawGraph関数を呼び出し
   drawGraph();
 
-  // 1秒間に60フレームを設定
+  // 1秒間に60回画面を更新し、アニメーションを非常に滑らかに動かす
   createjs.Ticker.framerate = 60;
-
-  // 画面内容をフレーム毎に更新
   createjs.Ticker.addEventListener("tick", stage);
 }
 
@@ -46,16 +41,16 @@ function updateCanvasSize() {
   let windowWidth = window.innerWidth;
   let windowLg = 1024;
   if (windowLg <= windowWidth) {
-    //横幅1024px以上（PC）に適用させるJavaScript
+    //横幅1024px以上（主にPC）時のグラフ表示サイズ
     let vwWidth = window.innerWidth * 0.75; // ビューポートの幅の75%
     stage.canvas.width = vwWidth;
     let vhHeight = window.innerHeight * 0.9; // ビューポートの幅の90%
     stage.canvas.height = vhHeight;
   } else {
-    //横幅1024px未満（タブレット、スマホ）に適用させるJavaScript
+    //横幅1024px未満（主にタブレット、スマホ）時のグラフ表示サイズ
     let vwWidth = window.innerWidth * 0.9; // ビューポートの幅の90%
     stage.canvas.width = vwWidth;
-    let vhHeight = window.innerHeight * 0.95 - 100; // ビューポートの幅の95%-100px
+    let vhHeight = window.innerHeight * 0.95 - 100; // ビューポートの幅の95%-フッター幅（100px）
     stage.canvas.height = vhHeight;
   }
 }
@@ -67,7 +62,7 @@ window.addEventListener("resize", function () {
 });
 
 function drawGraph() {
-  // パディングサイズ 10%
+  // パディング幅 10%
   let padding = 0.1;
 
   // 軸の基準
@@ -123,7 +118,7 @@ function drawGraph() {
       labels.x = baseX + horizontalStep * i; // X位置を調整
       labels.y = baseY + 20; // Y位置を調整
     } else {
-      // それ以外の場合、横書きのまま
+      // 横幅が639pxより大きい場合、ラベルを横書きにする
       labels.x = baseX + horizontalStep * i;
       labels.y = baseY + 10;
     }
@@ -236,7 +231,7 @@ function drawGraph() {
         // 点の動き
         createjs.Tween.get(dot)
           .to({ scale: 0 }, 0)
-          // 更に2500秒追加
+          // 2500ミリ秒追加することで、テキスト変化後に描画スタート
           .wait(500 + waitTime + 2500)
           .to({ scale: 2.5 }, 200)
           .to({ scale: 1.5 }, 200, createjs.Ease.cubicOut)
@@ -257,7 +252,7 @@ function drawGraph() {
         // 線の動き
         createjs.Tween.get(stroke)
           .to({ scaleX: 0, scaleY: 0 }, 0)
-          // 更に2500秒追加
+          // 2500ミリ秒追加することで、テキスト変化後に描画スタート
           .wait(500 + waitTime + 2500)
           .to({ scaleX: 1.0, scaleY: 1.0 }, 100);
 
